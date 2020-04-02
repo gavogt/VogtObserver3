@@ -17,7 +17,7 @@ namespace VogtObserver3
         }
         public override void Update(float discount)
         {
-            
+            Console.WriteLine("Discount is discount");
         }
     }
 }
