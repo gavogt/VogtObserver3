@@ -8,6 +8,7 @@ namespace VogtObserver3
    {
 
         private readonly List<Observer> _observers = new List<Observer>();
+
         private float _discount;
 
         public void AddObserver(Observer o)
