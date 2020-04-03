@@ -19,5 +19,20 @@ namespace VogtObserver3
         {
             Console.WriteLine("Discount is discount");
         }
+
+        public Store AddCustomerToStore(Customer cust, Store store)
+        {
+            store.AddObserver(cust);
+
+            return store;
+        }
+
+        public Store RemoveCustomerFromStore(Customer cust, Store store)
+        { 
+            store.AddObserver(cust);
+
+            return store;
+        }
+
     }
 }
