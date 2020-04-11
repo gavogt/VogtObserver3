@@ -29,9 +29,11 @@ namespace VogtObserver3
             _observers.Remove(o);
         }
 
-        public float GetDiscount()
+
+        public void GetDiscount()
         {
-            return _discount;
+            _discount = 5.00f;
+            Notify();
 
         }
     }

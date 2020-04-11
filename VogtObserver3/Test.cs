@@ -18,10 +18,15 @@ namespace VogtObserver3
             store.AddObserver(cust2);
             store2.AddObserver(cust2);
 
+
+            for (int i = 0; i < 20; i++)
+            {
+                store.GetDiscount();
+                store2.GetDiscount();
+            }
+
+
             store.RemoveObserver(cust2);
-
-
-
 
 
         }
