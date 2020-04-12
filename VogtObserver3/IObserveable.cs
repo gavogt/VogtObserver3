@@ -10,7 +10,7 @@ namespace VogtObserver3
 
         public abstract void RemoveObserver(Observer o);
 
-        public abstract void Notify();
+        public abstract void Notify(float discount);
 
     }
 }

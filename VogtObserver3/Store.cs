@@ -16,11 +16,11 @@ namespace VogtObserver3
             _observers.Add(o);
         }
 
-        public void Notify()
+        public void Notify(float discount)
         {
             foreach (var observer in _observers)
             {
-                observer.Update(_discount);
+                observer.Update(discount);
             }
         }
 
@@ -30,10 +30,12 @@ namespace VogtObserver3
         }
 
 
-        public void GetDiscount()
+        public void ApplyDiscount()
         {
-            _discount = 5.00f;
-            Notify();
+            Random random = new Random();
+
+            _discount = random.Next(1, 55);
+            Notify(_discount);
 
         }
     }

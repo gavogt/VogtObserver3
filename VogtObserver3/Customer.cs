@@ -14,11 +14,12 @@ namespace VogtObserver3
         {
             _name = name;
             _favoriteStore = favoriteStore;
+           
 
         }
         public override void Update(float discount)
         {
-            Console.WriteLine($"Discount is {discount}");
+            Console.WriteLine($"{_name} Discount is {discount}");
         }
 
         public Store AddCustomerToStore(Customer cust, Store store)
@@ -30,7 +31,7 @@ namespace VogtObserver3
 
         public Store RemoveCustomerFromStore(Customer cust, Store store)
         { 
-            store.AddObserver(cust);
+            store.RemoveObserver(cust);
 
             return store;
         }
