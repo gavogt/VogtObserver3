@@ -5,11 +5,9 @@ using System.Text;
 namespace VogtObserver3
 {
     class Store : IObserveable
-   {
-
+    {
+        private readonly Random _random = new Random();
         private readonly List<Observer> _observers = new List<Observer>();
-
-        private float _discount;
 
         public void AddObserver(Observer o)
         {
@@ -31,11 +29,8 @@ namespace VogtObserver3
 
 
         public void ApplyDiscount()
-        {
-            Random random = new Random();
-
-            _discount = random.Next(1, 55);
-            Notify(_discount);
+        { 
+            Notify(_random.Next(1, 55));
 
         }
     }

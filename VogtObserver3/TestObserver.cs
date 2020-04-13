@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VogtObserver3
 {
-    class Test
+    class TestObserver
     {
         public static void Run()
         {
@@ -14,9 +14,11 @@ namespace VogtObserver3
             Customer cust = new Customer("Julie", "Bed Bath & Beyond");
             Customer cust2 = new Customer("Doug", "Hot Topic");
 
-            cust.AddCustomerToStore(cust,store);
-            cust2.AddCustomerToStore(cust2, store);
-            cust2.AddCustomerToStore(cust2, store2);
+            TestObserver test = new TestObserver();
+
+            test.AddCustomerToStore(cust,store);
+            test.AddCustomerToStore(cust2, store);
+            test.AddCustomerToStore(cust2, store2);
 
             //store.AddObserver(cust);
             //store.AddObserver(cust2);
@@ -38,6 +40,18 @@ namespace VogtObserver3
                 store.ApplyDiscount();
                 store2.ApplyDiscount();
             }
+
+        }
+
+        public void AddCustomerToStore(Customer cust, Store store)
+        {
+            store.AddObserver(cust);
+
+        }
+
+        public void RemoveCustomerFromStore(Customer cust, Store store)
+        {
+            store.RemoveObserver(cust);
 
         }
     }
