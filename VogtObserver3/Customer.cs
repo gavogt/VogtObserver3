@@ -8,16 +8,21 @@ namespace VogtObserver3
     {
         private readonly string _name;
         private readonly string _favoriteStore;
-        
+
+
         public Customer(string name, string favoriteStore)
         {
             _name = name;
             _favoriteStore = favoriteStore;
+           
 
         }
         public override void Update(float discount)
         {
-            
+            Console.WriteLine($"{_name} Discount is {discount}");
         }
+
+
+
     }
 }
